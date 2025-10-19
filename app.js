@@ -33,12 +33,12 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.classList.add("task", "task--text");
 
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
-    editInput.className="task";
+    editInput.classList.add("task", "task--input");
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.classList.add("btn--edit", "btn");
@@ -47,6 +47,7 @@ var createNewTaskElement=function(taskString){
     deleteButtonImg.src='./remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
+    listItem.classList.add("list__item");
 
     //and appending.
     listItem.appendChild(checkBox);
@@ -58,8 +59,8 @@ var createNewTaskElement=function(taskString){
 }
 
 
-
-var addTask=function(){
+var addTask=function(e){
+    e.preventDefault();
     console.log("Add Task...");
     //Create a new list item with the text from the #new-task:
     if (!taskInput.value) return;
@@ -147,7 +148,6 @@ var ajaxRequest=function(){
 
 
 //Set the click handler to the addTask function.
-addButton.onclick=addTask;
 addButton.addEventListener("click",addTask);
 addButton.addEventListener("click",ajaxRequest);
 
