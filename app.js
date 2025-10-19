@@ -44,7 +44,7 @@ var createNewTaskElement=function(taskString){
     editButton.classList.add("btn--edit", "btn");
 
     deleteButton.classList.add("btn--delete", "btn");
-    deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.src="./remove.svg";
     deleteButton.appendChild(deleteButtonImg);
 
     listItem.classList.add("list__item");
@@ -83,7 +83,7 @@ var editTask=function(){
 
     var listItem=this.parentNode;
 
-    var editInput=listItem.querySelector('input[type=text]');
+    var editInput=listItem.querySelector("input[type=text]");
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".btn--edit");
     var containsClass=listItem.classList.contains("list__item--edit");
