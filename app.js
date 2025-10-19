@@ -86,7 +86,7 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".btn--edit");
-    var containsClass=listItem.classList.contains("edit-mode");
+    var containsClass=listItem.classList.contains("list__item--edit");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -100,7 +100,7 @@ var editTask=function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("edit-mode");
+    listItem.classList.toggle("list__item--edit");
 };
 
 
@@ -156,8 +156,8 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
     var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("btn--edit");
-    var deleteButton=taskListItem.querySelector("btn--delete");
+    var editButton=taskListItem.querySelector(".btn--edit");
+    var deleteButton=taskListItem.querySelector(".btn--delete");
 
 
     //Bind editTask to edit button.
